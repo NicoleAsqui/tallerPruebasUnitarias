@@ -6,6 +6,12 @@ import org.junit.jupiter.api.Test;
 
 class EmployeeTest {
 
+	/*
+	 * testCs are a set of unit tests made with the purpose of evaluate 
+	 * the method cs that calculates the salary of the employee in relation
+	 * with the type of employee and if it receives the extra 10% of salary
+	 * if the month is odd.
+	 */
 	@Test
 	void testCs1() {
 		Employee e = new Employee(400F,"EUR",0.8F,EmployeeType.Worker);
