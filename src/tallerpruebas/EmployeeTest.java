@@ -80,7 +80,6 @@ class EmployeeTest {
 				new Employee(salary,currency,bonusPercentage,etype);
 		float expected =386;
 		float experimental = emp.CalculateYearBonus();
-		System.out.println(experimental);
 		assertEquals(expected,experimental,0.1);
 
 
