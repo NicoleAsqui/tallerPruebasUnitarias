@@ -52,4 +52,104 @@ class EmployeeTest {
 		float salario = e6.cs();
 		assertEquals(464.89F,salario,0.01F);
 	}
+	//Calculate the bonus of the employee depended on the currency and the type of employee
+//Test para Worker con currency USD
+	@Test
+	void testCalculateYearBonusWorkerUSD() {
+	float bonusPercentage = (float) 0.1;
+	float salary =1500;
+	String currency ="USD";
+	EmployeeType etype=EmployeeType.Worker;
+	Employee emp =
+			new Employee(salary,currency,bonusPercentage,etype);
+	float expected =386;
+	float experimental = emp.CalculateYearBonus();
+	assertEquals(expected,experimental,0.1);
+
+
+}
+
+//Test para Worker con currency USD
+	@Test
+	void testCalculateYearBonusWorkerELSE() {
+		float bonusPercentage = (float) 0.1;
+		float salary =1500;
+		String currency ="EUR";
+		EmployeeType etype=EmployeeType.Worker;
+		Employee emp =
+				new Employee(salary,currency,bonusPercentage,etype);
+		float expected =386;
+		float experimental = emp.CalculateYearBonus();
+		System.out.println(experimental);
+		assertEquals(expected,experimental,0.1);
+
+
+	}
+
+	//Test para Supervisor con currency USD
+	@Test
+	void testCalculateYearBonusSupervisorUSD() {
+		float bonusPercentage = (float) 0.1;
+		float salary =1500;
+		String currency ="USD";
+		EmployeeType etype=EmployeeType.Supervisor;
+		Employee emp =
+				new Employee(salary,currency,bonusPercentage,etype);
+		float expected =1693;
+		float experimental = emp.CalculateYearBonus();
+		assertEquals(expected,experimental,0.1);
+
+
+	}
+
+	//Test para Supervisor con currency ELSE
+		@Test
+		void testCalculateYearBonusSupervisoELSE() {
+			float bonusPercentage = (float) 0.1;
+			float salary =1500;
+			String currency ="EUR";
+			EmployeeType etype=EmployeeType.Supervisor;
+			Employee emp =
+					new Employee(salary,currency,bonusPercentage,etype);
+			float expected =1618;
+			float experimental = emp.CalculateYearBonus();
+
+			assertEquals(expected,experimental,0.1);
+
+
+		}
+
+
+		//Test para Manager con currency USD
+		@Test
+		void testCalculateYearBonusManagerUSD() {
+			float bonusPercentage = (float) 0.1;
+			float salary =1500;
+			String currency ="USD";
+			EmployeeType etype=EmployeeType.Manager;
+			Employee emp =
+					new Employee(salary,currency,bonusPercentage,etype);
+			float expected =1886;
+			float experimental = emp.CalculateYearBonus();
+			assertEquals(expected,experimental,0.1);
+
+
+		}
+
+		//Test para Manager con currency ELSE
+			@Test
+			void testCalculateYearBonusManagerELSE() {
+				float bonusPercentage = (float) 0.1;
+				float salary =1500;
+				String currency ="EUR";
+				EmployeeType etype=EmployeeType.Manager;
+				Employee emp =
+						new Employee(salary,currency,bonusPercentage,etype);
+				float expected =1811;
+				float experimental = emp.CalculateYearBonus();
+
+				assertEquals(expected,experimental,0.1);
+
+
+			}
 }
